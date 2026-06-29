@@ -1,0 +1,13 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+coverage/
+
+# Claude Code local settings (machine/user-specific, not published)
+.claude/
+
+# Internal documentation (not published to public repo)
+docs/
+chatgpt-local-bridge项目笔记.md
+需求说明文档.md

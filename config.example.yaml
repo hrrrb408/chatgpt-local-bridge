@@ -1,0 +1,38 @@
+# chatgpt-local-bridge configuration
+# Default location: ~/.chatgpt-local-bridge/config.yaml
+
+server:
+  port: 3456
+  host: "127.0.0.1"        # Only listen locally; never bind 0.0.0.0
+  # allowed_hosts:          # Optional DNS-rebinding protection (Host-header allow-list)
+  # log_requests: true      # Log every MCP request to stdout (debug client interop; off by default)
+
+permissions:
+  level: 1                  # 0 = read-only, 1 = edit (+write/edit/move/delete), 2 = full (+run_command)
+  allowed_paths:
+    - ~/Desktop
+    - ~/Documents
+    - ~/Code
+    - ~/Projects
+  denied_paths:             # Block subtrees inside allowed_paths (e.g. secrets)
+    - ~/.ssh
+    - ~/.gnupg
+
+limits:
+  max_read_size: 524288     # 500 KB per read
+  max_write_size: 1048576   # 1 MB per write
+  max_search_results: 50
+  command_timeout: 30       # seconds
+
+safety:
+  confirm_delete: true
+  confirm_overwrite: true
+  confirm_command: true
+  blocked_commands:
+    - "rm -rf /"
+    - "sudo"
+    - "mkfs"
+    - "dd if="
+    - "shutdown"
+    - "reboot"
+    - "halt"
