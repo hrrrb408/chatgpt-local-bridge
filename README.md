@@ -117,8 +117,6 @@ safety:
 - `run_command` 从不起 shell。任何需要 shell 特性的（管道、`&&`、重定向、`$()`、glob）一律拒绝。
 - 权限分级在任何 IO 之前强制；运行时不可提权。
 
-完整设计（需求、架构、详细设计、实现计划）见 [`docs/`](docs/)。
-
 ## 开发
 
 ```bash
@@ -131,4 +129,4 @@ node scripts/e2e-smoke.mjs   # 端到端，脚本头部有驱动说明
 
 ## License
 
-MIT
+MIT — 详见 [LICENSE](LICENSE)。

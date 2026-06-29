@@ -117,8 +117,6 @@ Destructive operations (`delete_file`, overwriting `write_file`, `run_command`) 
 - `run_command` never spawns a shell. Anything requiring shell features (pipes, `&&`, redirects, `$()`, globs) is rejected.
 - Permission levels are enforced before any IO; they cannot be raised at runtime.
 
-See [`docs/`](docs/) for the full design (requirements, architecture, detailed design, implementation plan).
-
 ## Development
 
 ```bash
@@ -131,4 +129,4 @@ node scripts/e2e-smoke.mjs   # see scripts/ header for how to drive it
 
 ## License
 
-MIT
+MIT — see [LICENSE](LICENSE).
